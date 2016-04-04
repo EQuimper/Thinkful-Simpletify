@@ -105,7 +105,7 @@ body {
 
 .main {
   background-color: $black;
-  height: 700px;
+  height: auto;
 }
 
 #getTrack {
@@ -145,8 +145,15 @@ body {
 .tracksItem {
   background-color: white;
   margin-top: 5px;
-  padding: 10px;
+  padding: 5px;
   cursor: pointer;
+  transition: all 0.5s easy;
+}
+
+.tracksItem:hover {
+  transform: scale(1.5);
+  background-color: $green;
+  color: white;
 }
 
 .tracksItem img {
@@ -162,4 +169,19 @@ body {
   clear: both;
   display: inline;
   margin-left: 10px;
+}
+
+// .buttonPlay {
+//   transition: all 0.5s easy;
+// }
+//
+// .buttonPlay:hover {
+//   transform: scale(1.5);
+// }
+
+.player {
+  max-width: 351.234px;
+  max-height: 75px;
+  min-width: 351.234px;
+  min-height: 75px;
 }
