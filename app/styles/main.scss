@@ -105,9 +105,39 @@ body {
 
 .main {
   background-color: $black;
-  height: 700px;
+  height: 600px;
 }
 
 #getTrack {
   margin-top: 10px;
+}
+
+.artists ul {
+  list-style: none;
+  height: 100%;
+  margin-top: 20px;
+}
+
+.listArtistItem {
+  cursor: pointer;
+  .name {
+    margin-left: 20px;
+    clear: both;
+    display: inline;
+  }
+  background-color: white;
+  margin-top: 12px;
+  padding: 20px 0;
+  border-radius: 5px;
+  // border: 1px solid #000;
+}
+
+
+.listArtistItem img {
+  max-width: 50px;
+  max-height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  margin-left: 10px;
+  display: inline;
 }
