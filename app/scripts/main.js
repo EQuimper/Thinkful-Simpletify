@@ -67,7 +67,7 @@ function getArtistInfo(value) {
               showResultTrack(preview, trackImg, title);
             });
             $('.tracksItem').mouseover(function() {
-              $(this).find('.album').attr('src', '/images/play.png').addClass('buttonPlay');
+              $(this).find('.album').attr('src', 'images/play.png').addClass('buttonPlay');
             }).mouseout(function() {
               var imgDefault = $(this).find('.album').data('image');
               $(this).find('.album').attr('src', imgDefault);
