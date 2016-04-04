@@ -1,24 +1,14 @@
 $icon-font-path: '../fonts/';
 $green: #32CD64;
 $black: #181818;
-$btn-primary-bg: $green;
-// bower:scss
-@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-// endbower
-
-
-
-
-
-
-
+$btn-primary-bg: $green; // bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss"; // endbower
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
 }
-
 /* Space out content a bit */
 body {
   padding-top: 20px;
@@ -26,19 +16,16 @@ body {
   background-color: $green;
   height: 100vh;
 }
-
 /* Everything but the jumbotron gets side spacing for mobile first views */
+.footer,
 .header,
-.marketing,
-.footer {
+.marketing {
   padding-left: 15px;
   padding-right: 15px;
 }
-
 /* Custom page header */
 .header {
   border-bottom: 1px solid $black;
-
   /* Make the masthead heading the same height as the navigation */
   h3 {
     margin-top: 0;
@@ -48,18 +35,15 @@ body {
     color: $black;
   }
 }
-
 /* Custom page footer */
 .footer {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
 }
-
 .container-narrow > hr {
   margin: 30px 0;
 }
-
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
@@ -69,7 +53,6 @@ body {
     padding: 14px 24px;
   }
 }
-
 /* Supporting marketing content */
 .marketing {
   margin: 40px 0;
@@ -77,47 +60,40 @@ body {
     margin-top: 28px;
   }
 }
-
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
     max-width: 730px;
   }
-
   /* Remove the padding we set earlier */
+  .footer,
   .header,
-  .marketing,
-  .footer {
+  .marketing {
     padding-left: 0;
     padding-right: 0;
   }
-
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
   }
-
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
   }
 }
-
 .main {
   background-color: $black;
   height: auto;
 }
-
 #getTrack {
   margin-top: 10px;
 }
-
-.artists ul, .songs ul {
+.artists ul,
+.songs ul {
   list-style: none;
   height: 100%;
   margin-top: 20px;
 }
-
 .listArtistItem {
   cursor: pointer;
   .name {
@@ -131,8 +107,6 @@ body {
   border-radius: 5px;
   // border: 1px solid #000;
 }
-
-
 .listArtistItem img {
   max-width: 50px;
   max-height: 50px;
@@ -141,21 +115,18 @@ body {
   margin-left: 10px;
   display: inline;
 }
-
-.tracksItem {
+.tracksItem, .player {
   background-color: white;
   margin-top: 5px;
   padding: 5px;
   cursor: pointer;
   transition: all 0.5s easy;
 }
-
 .tracksItem:hover {
   transform: scale(1.5);
   background-color: $green;
   color: white;
 }
-
 .tracksItem img {
   max-width: 40px;
   max-height: 40px;
@@ -165,12 +136,15 @@ body {
   display: inline;
 }
 
+.tracksItem a {
+  text-decoration: none;
+  color: $black;
+}
 .tracksItem .title {
   clear: both;
   display: inline;
   margin-left: 10px;
 }
-
 // .buttonPlay {
 //   transition: all 0.5s easy;
 // }
@@ -178,10 +152,15 @@ body {
 // .buttonPlay:hover {
 //   transform: scale(1.5);
 // }
+// .player {
+//   max-width: 351.234px;
+//   max-height: 75px;
+//   min-width: 351.234px;
+//   min-height: 75px;
+// }
 
-.player {
-  max-width: 351.234px;
-  max-height: 75px;
-  min-width: 351.234px;
-  min-height: 75px;
+.intro {
+  background-color: white;
+  display: inline-block;
+  margin-left: 20px;
 }

@@ -60,22 +60,20 @@ function getArtistInfo(value) {
             result.tracks = result.tracks.slice(0, 10);
             $.each(result.tracks, function(i, item) {
               var preview = item.preview_url;
-              // var trackId = item.id;
-              // console.log(trackId);
+              var trackId = item.id;
               var trackImg = item.album.images[0].url;
               var title = item.name;
               showResultTrack(preview, trackImg, title);
             });
             $('.tracksItem').mouseover(function() {
-              $(this).find('.album').attr('src', 'images/play.png').addClass('buttonPlay');
+              $(this).find('.album').attr('src', '../images/play.png').addClass('buttonPlay');
             }).mouseout(function() {
               var imgDefault = $(this).find('.album').data('image');
               $(this).find('.album').attr('src', imgDefault);
             }).mouseover(function() {
               var oneTrack = $(this).data('preview');
               $(this).on('click', function() {
-                $(this).hide();
-                $(this).html('<iframe src="' + oneTrack + '"></iframe>').addClass('player');
+                $(this).find('a').attr('href', oneTrack);
               });
 
 
@@ -96,6 +94,6 @@ function showResultArtist(name, imageSm, artistId) {
 function showResultTrack(preview, trackImg, title) {
   'use strict';
 
-  $('.songs ul').append('<li data-preview="' + preview + '" class="tracksItem"><img data-image="' + trackImg + '" class="album img-circle" src="' + trackImg + '" alt="" /><h6 class="title">' + title + '</h6></li>');
+  $('.songs ul').append('<li data-preview="' + preview + '" class="tracksItem"><a target="_blank"><img data-image="' + trackImg + '" class="album img-circle" src="' + trackImg + '" alt="" /><h6 class="title">' + title + '</h6></a></li>');
 
 }
