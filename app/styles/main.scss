@@ -2,7 +2,8 @@ $icon-font-path: '../fonts/';
 $green: #32CD64;
 $black: #181818;
 $btn-primary-bg: $green; // bower:scss
-@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss"; // endbower
+ @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+ // endbower
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -16,14 +17,7 @@ body {
   background-color: $green;
   height: 100vh;
 }
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.footer,
-.header,
-.marketing {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-/* Custom page header */
+
 .header {
   border-bottom: 1px solid $black;
   /* Make the masthead heading the same height as the navigation */
@@ -62,9 +56,9 @@ body {
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
+  // .container {
+  //   max-width: 730px;
+  // }
   /* Remove the padding we set earlier */
   .footer,
   .header,
@@ -123,7 +117,7 @@ body {
   transition: all 0.5s easy;
 }
 .tracksItem:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
   background-color: $green;
   color: white;
 }
@@ -145,22 +139,46 @@ body {
   display: inline;
   margin-left: 10px;
 }
-// .buttonPlay {
-//   transition: all 0.5s easy;
-// }
-//
-// .buttonPlay:hover {
-//   transform: scale(1.5);
-// }
-// .player {
-//   max-width: 351.234px;
-//   max-height: 75px;
-//   min-width: 351.234px;
-//   min-height: 75px;
-// }
 
 .intro {
   background-color: white;
   display: inline-block;
   margin-left: 20px;
+}
+
+@media screen and (max-width:650px){
+  .tracksItem img {
+    max-width: 30px;
+    max-height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+    margin-left: 5px;
+  }
+  .title, .name {
+    font-size: 10px;
+  }
+
+  .tracksItem .title, .listArtistItem .name {
+    display: block;
+    margin-left: 0
+  }
+
+
+  .listArtistItem {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .tracksItem {
+    padding: 3px;
+    text-align: center;
+  }
+
+  .listArtistItem img {
+    max-width: 30px;
+    max-height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+    margin-left: -7px;
+  }
 }
