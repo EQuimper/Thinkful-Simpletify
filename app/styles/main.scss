@@ -105,14 +105,14 @@ body {
 
 .main {
   background-color: $black;
-  height: 600px;
+  height: 700px;
 }
 
 #getTrack {
   margin-top: 10px;
 }
 
-.artists ul {
+.artists ul, .songs ul {
   list-style: none;
   height: 100%;
   margin-top: 20px;
@@ -140,4 +140,26 @@ body {
   min-height: 50px;
   margin-left: 10px;
   display: inline;
+}
+
+.tracksItem {
+  background-color: white;
+  margin-top: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.tracksItem img {
+  max-width: 40px;
+  max-height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  margin-left: 5px;
+  display: inline;
+}
+
+.tracksItem .title {
+  clear: both;
+  display: inline;
+  margin-left: 10px;
 }

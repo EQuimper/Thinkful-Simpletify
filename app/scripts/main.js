@@ -16,7 +16,7 @@ function getArtistInfo(value){
   var request = {
     q: value,
     type: 'track,artist',
-    limit: 5,
+    limit: 7,
     Market: 'US',
     Authorization: API
   };
@@ -33,17 +33,49 @@ function getArtistInfo(value){
       var name = item.name;
       var artistId = item.id;
       var imageSm = item.images[0].url;
-      showResult(name, imageSm, artistId);
+      showResultArtist(name, imageSm, artistId);
     });
   });
 }
 
-function showResult(name, imageSm, artistId){
+function showResultArtist(name, imageSm, artistId){
   // console.log(name);
   $('.artists ul').append('<li data-artist="'+artistId+'" class="listArtistItem"><img class="img-circle" src="'+imageSm+'" alt="" /><h5 class="name">'+name+'</h5></li>');
 
-  $('.listArtistItem').on('click', function(e, artistId){
+  $('.listArtistItem').on('click', function(e){
     e.preventDefault();
-    console.log($(this).data('artist'));
+    var idArtist = $(this).data('artist');
+
+    var request = {
+      country: 'US',
+      limit: 5,
+      Authorization: API
+    };
+
+    $.ajax({
+      url: 'https://api.spotify.com/v1/artists/'+idArtist+'/top-tracks',
+      data: request,
+      datatype: 'json',
+      type: 'GET'
+    })
+    .done(function(result){
+      // console.log(result);
+      $.each(result.tracks, function(i, item){
+        var preview = item.preview_url;
+        var trackImg = item.album.images[0].url;
+        var title = item.name;
+        showResultTrack(preview, trackImg, title);
+      });
+    });
   });
 }
+
+function showResultTrack(preview, trackImg, title){
+  console.log(trackImg);
+  'use strict';
+
+  $('.songs ul').append('<li class="tracksItem"><img class="img-circle" src="'+trackImg+'" alt="" /><h6 class="title">'+title+'</h6></li>');
+
+}
+
+$('.tracksItem').mouseover().text('<i class="glyphicon glyphicon-play-circle"></i>');
