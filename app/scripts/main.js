@@ -1,7 +1,7 @@
 /* global $:false*/
+'use strict';
 
 $(function() {
-  'use strict';
   $('form#getTrack').submit(function(e) {
     e.preventDefault();
     var value = $('input#trackName').val();
@@ -12,7 +12,6 @@ $(function() {
 });
 
 function getArtistInfo(value) {
-  'use strict';
 
   var request = {
     q: value,
@@ -85,14 +84,12 @@ function getArtistInfo(value) {
 }
 
 function showResultArtist(name, imageSm, artistId) {
-  'use strict';
-  // console.log(name);
+
   $('.artists ul').append('<li data-artist="' + artistId + '" class="listArtistItem"><img class="img-circle" src="' + imageSm + '" alt="" /><h5 class="name">' + name + '</h5></li>');
 
 }
 
 function showResultTrack(preview, trackImg, title) {
-  'use strict';
 
   $('.songs ul').append('<li data-preview="' + preview + '" class="tracksItem"><a target="_blank"><img data-image="' + trackImg + '" class="album img-circle" src="' + trackImg + '" alt="" /><h6 class="title">' + title + '</h6></a></li>');
 
