@@ -140,10 +140,17 @@ body {
   margin-left: 10px;
 }
 
+.container {
+  margin-top: 50px;
+}
+
 .intro {
   background-color: white;
   display: inline-block;
-  margin-left: 20px;
+  position: absolute;
+  left: 50%;
+  margin-left: -175px;
+  box-shadow: 2px 2px 2px black;
 }
 
 @media screen and (max-width:650px){
